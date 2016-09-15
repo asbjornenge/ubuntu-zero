@@ -1,4 +1,4 @@
-## TAGHUB ZEROTIER CONTAINER
+## Ubuntu with ZeroTier base image
 #
 FROM ubuntu:16.04 
 MAINTAINER Asbjorn Enge <asbjorn@hanafjedle.net> 
