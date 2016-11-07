@@ -6,15 +6,15 @@ MAINTAINER Asbjorn Enge <asbjorn@hanafjedle.net>
 # Update & Install
 RUN apt-get -qq update
 RUN apt-get -qq -y install curl
+RUN apt-get -qq -y install python
 
 # Add ZT files
-RUN mkdir -p /var/lib/zerotier-one/networks.d
-ADD liblwip.so /var/lib/zerotier-one/liblwip.so
+ADD liblwip.so / 
 ADD libztintercept.so /
-RUN cp libztintercept.so lib/libztintercept.so
-RUN ln -sf /lib/libztintercept.so /lib/libzerotierintercept
-ADD zerotier-cli /
-Add zerotier-sdk-service /
+ADD zerotier-sdk-service /
+ADD zerotier-one /
+ADD zerotier-cli /zerotier-cli
 ADD init-zerotier.sh /usr/local/bin/init-zerotier
+ADD app.sh /usr/local/bin/app
 
 EXPOSE 9993/udp
