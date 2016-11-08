@@ -7,6 +7,7 @@ MAINTAINER Asbjorn Enge <asbjorn@hanafjedle.net>
 RUN apt-get -qq update
 RUN apt-get -qq -y install curl
 RUN apt-get -qq -y install python
+RUN apt-get -qq -y install nodejs
 
 # Add ZT files
 ADD liblwip.so / 
@@ -16,5 +17,6 @@ ADD zerotier-one /
 ADD zerotier-cli /zerotier-cli
 ADD init-zerotier.sh /usr/local/bin/init-zerotier
 ADD app.sh /usr/local/bin/app
+ADD app.js /
 
 EXPOSE 9993/udp
